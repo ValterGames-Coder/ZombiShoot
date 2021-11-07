@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2686200197623907006}
   - component: {fileID: 6586788644113251237}
   - component: {fileID: 526194106755239447}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7024425546090708506}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: attackpos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 9104589345804966470}
   - component: {fileID: 671119792136124768}
   - component: {fileID: 399080600511669697}
+  - component: {fileID: 2271849912789674050}
   m_Layer: 7
   m_Name: zombiicher
   m_TagString: Enemy
@@ -280,11 +281,13 @@ MonoBehaviour:
   _fullHeart: {fileID: -3807221444513455380, guid: 4319350092f697795a964dc0797f49a2, type: 3}
   _emptyHeart: {fileID: -6559764877361928471, guid: 4319350092f697795a964dc0797f49a2, type: 3}
   _lose: {fileID: 0}
-  _blood:
+  _canvas: {fileID: 1021721580088548127}
+  _diedSprite: {fileID: 391452754125885116, guid: 482894217d0c9cfaaa016204f485df21, type: 3}
+  _bloods:
   - {fileID: 2621057875503576626, guid: 554a4c810b630e8ad8c5990fff3e55e0, type: 3}
   - {fileID: 8396853775416739883, guid: d7b4dda7ed0c80f9cbee0cd80ec67553, type: 3}
   - {fileID: 8484367460468082413, guid: e57c5bb0da1cf0075959e0686c8eed4a, type: 3}
-  _diedSprite: {fileID: 391452754125885116, guid: 482894217d0c9cfaaa016204f485df21, type: 3}
+  _diedAudio: {fileID: 3725570711409944112, guid: 203015794947df13cb7de4420cd464a4, type: 3}
 --- !u!114 &9104589345804966470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +347,102 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &2271849912789674050
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2794927681261924939}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: edb1ec91fff92d118a1053e51fd117fa, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 193
+  DopplerLevel: 1
+  MinDistance: 9.861954
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5464790112021042521
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +454,7 @@ GameObject:
   - component: {fileID: 5319661820216133059}
   - component: {fileID: 7076914711875944301}
   - component: {fileID: 2556663495349031062}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: health (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +529,7 @@ GameObject:
   - component: {fileID: 2000022200172351867}
   - component: {fileID: 8230183545588134863}
   - component: {fileID: 6796100168064130322}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: health
   m_TagString: Untagged
   m_Icon: {fileID: 0}

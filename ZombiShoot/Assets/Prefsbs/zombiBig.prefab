@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3022208584020682809}
   - component: {fileID: 6331708367995080994}
   - component: {fileID: 863332860907070608}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 8282042391226462401}
   - component: {fileID: 425042110002271207}
   - component: {fileID: 7447984365788268628}
+  - component: {fileID: 2745740417068402813}
   m_Layer: 7
   m_Name: zombiBig
   m_TagString: Enemy
@@ -246,17 +247,19 @@ MonoBehaviour:
   health: 3
   numOfHeart: 3
   _hearts:
-  - {fileID: 5973707633623447445}
   - {fileID: 3525311953486133170}
+  - {fileID: 5973707633623447445}
   - {fileID: 4959113204422021904}
   _fullHeart: {fileID: -3807221444513455380, guid: 4319350092f697795a964dc0797f49a2, type: 3}
   _emptyHeart: {fileID: -6559764877361928471, guid: 4319350092f697795a964dc0797f49a2, type: 3}
   _lose: {fileID: 0}
-  _blood:
+  _canvas: {fileID: 187924352740766104}
+  _diedSprite: {fileID: 8684703443076301036, guid: 482894217d0c9cfaaa016204f485df21, type: 3}
+  _bloods:
   - {fileID: 2621057875503576626, guid: 554a4c810b630e8ad8c5990fff3e55e0, type: 3}
   - {fileID: 8396853775416739883, guid: d7b4dda7ed0c80f9cbee0cd80ec67553, type: 3}
   - {fileID: 8484367460468082413, guid: e57c5bb0da1cf0075959e0686c8eed4a, type: 3}
-  _diedSprite: {fileID: 8684703443076301036, guid: 482894217d0c9cfaaa016204f485df21, type: 3}
+  _diedAudio: {fileID: 3725570711409944112, guid: 203015794947df13cb7de4420cd464a4, type: 3}
 --- !u!114 &8282042391226462401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +319,102 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &2745740417068402813
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3062401034006599884}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 589cfe7fc5ebeb5fc8532b00a0a77860, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 189
+  DopplerLevel: 1
+  MinDistance: 9.312675
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3419873960020609144
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7912124946936960157}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: attackpos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +456,7 @@ GameObject:
   - component: {fileID: 5406342196857179770}
   - component: {fileID: 5775553372856096981}
   - component: {fileID: 3525311953486133170}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: health (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +531,7 @@ GameObject:
   - component: {fileID: 8049278149765343927}
   - component: {fileID: 5395011497800872750}
   - component: {fileID: 4959113204422021904}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: health (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +606,7 @@ GameObject:
   - component: {fileID: 1691040023294409724}
   - component: {fileID: 9115631156292671816}
   - component: {fileID: 5973707633623447445}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: health
   m_TagString: Untagged
   m_Icon: {fileID: 0}

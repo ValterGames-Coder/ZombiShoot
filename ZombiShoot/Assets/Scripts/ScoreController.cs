@@ -15,6 +15,10 @@ public class ScoreController : MonoBehaviour
 
     void Start()
     {
+        if(PlayerPrefs.HasKey("BulletDamage") == false) PlayerPrefs.SetInt("BulletDamage", 1);
+        if(PlayerPrefs.HasKey("BulletSpeed") == false) PlayerPrefs.SetFloat("BulletSpeed", 5);
+        stop = false;
+        Time.timeScale = 1;
         _force = FindObjectOfType<RandomForce>();
     }
     
@@ -23,6 +27,8 @@ public class ScoreController : MonoBehaviour
         if (kill >= 50)
         {
             win = true;
+            PlayerPrefs.SetInt("BulletDamage", 1);
+            PlayerPrefs.SetFloat("BulletSpeed", 5);
             _win.SetActive(true);
             Time.timeScale = 0;
         }

@@ -8,7 +8,9 @@ public class SceneManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            PlayerPrefs.SetInt("BulletDamage", 1);
+            PlayerPrefs.SetFloat("BulletSpeed", 5);
         }
     }
 }

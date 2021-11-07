@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(!FindObjectOfType<ScoreController>().stop)
+        if(FindObjectOfType<ScoreController>().stop == false)
             transform.Translate(Vector2.down *_speed * Time.deltaTime);
     }
 }

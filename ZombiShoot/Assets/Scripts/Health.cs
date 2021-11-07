@@ -8,9 +8,16 @@ public class Health : MonoBehaviour
     public int health, numOfHeart;
     [SerializeField] private List<Image> _hearts;
     [SerializeField] private Sprite _fullHeart, _emptyHeart;
-    [SerializeField] private GameObject _lose;
+    [SerializeField] private GameObject _lose, _canvas;
     [SerializeField] private Sprite _diedSprite;
-    private bool _isDied;
+    [SerializeField] private List<GameObject> _bloods;
+    [SerializeField] private GameObject _diedAudio;
+    private bool _isDied, _hasBlood;
+
+    void Start()
+    {
+        if(gameObject.layer == 7) _canvas.SetActive(true);
+    }
     
     void Update()
     {
@@ -31,7 +38,6 @@ public class Health : MonoBehaviour
             else if (gameObject.layer == 7)
             {
                 StartCoroutine(Died());
-
             }
             else Destroy(gameObject);
         }
@@ -39,14 +45,24 @@ public class Health : MonoBehaviour
 
     private IEnumerator Died()
     {
+        GameObject blood = null, audio = null;
+        if(_hasBlood == false)
+        {
+            blood = Instantiate(_bloods[Random.Range(0, _bloods.Count)], transform.position, Quaternion.identity);
+            audio = Instantiate(_diedAudio, transform.position, Quaternion.identity);
+            _hasBlood = true;
+        }
         GetComponent<Enemy>()._speed = 0;
         GetComponent<AttackEnemy>()._damage = 0;
         GetComponent<Animator>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         GetComponent<SpriteRenderer>().sprite = _diedSprite;
+        _canvas.SetActive(false);
         if(!_isDied) FindObjectOfType<ScoreController>().kill++;
         _isDied = true;
         yield return new WaitForSeconds(1f);
+        Destroy(blood);
+        Destroy(audio);
         Destroy(gameObject);
     }
 

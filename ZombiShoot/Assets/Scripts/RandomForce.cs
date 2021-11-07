@@ -64,14 +64,22 @@ public class RandomForce : MonoBehaviour
 
     public void UpRealoding()
     {
-        _gunController.timeShoot -= 0.2f;
-        _bullet.speed += 0.2f;
+        float a, b;
+        a = _gunController.timeShoot -= 0.2f;
+        b = _bullet.speed += 0.2f;
+        PlayerPrefs.SetFloat("TimeShoot", a);
+        PlayerPrefs.SetFloat("BulletSpeed", b);
     }
 
     public void UpDamage()
     {
-        if(_bullet.damage < 3)
-            _bullet.damage++;
+        if (_bullet.damage < 3)
+        {
+            int a;
+            a = _bullet.damage++;
+            PlayerPrefs.SetInt("BulletDamage", a);
+        }
+        
     }
     public void Stop()
     {

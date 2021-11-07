@@ -7,8 +7,8 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        if(FindObjectOfType<ScoreController>().win || GameObject.Find("wall").GetComponent<Health>().health <= 0)
-            damage = 1; speed = 6;
+        speed = PlayerPrefs.GetFloat("BulletSpeed");
+        damage = PlayerPrefs.GetInt("BulletDamage");
     }
 
     void Update()

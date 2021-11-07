@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8026825684295723502}
   - component: {fileID: 474002361523440474}
   - component: {fileID: 3095129556502832519}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 791926768369165011}
   - component: {fileID: 9076100234886988277}
   - component: {fileID: 5595426560010505872}
+  - component: {fileID: 1657571994702670628}
   m_Layer: 7
   m_Name: zombi
   m_TagString: Enemy
@@ -223,11 +224,13 @@ MonoBehaviour:
   _fullHeart: {fileID: -3807221444513455380, guid: 4319350092f697795a964dc0797f49a2, type: 3}
   _emptyHeart: {fileID: -6559764877361928471, guid: 4319350092f697795a964dc0797f49a2, type: 3}
   _lose: {fileID: 0}
-  _blood:
+  _canvas: {fileID: 8829694834185986954}
+  _diedSprite: {fileID: 1212005890738395340, guid: 482894217d0c9cfaaa016204f485df21, type: 3}
+  _bloods:
   - {fileID: 2621057875503576626, guid: 554a4c810b630e8ad8c5990fff3e55e0, type: 3}
   - {fileID: 8396853775416739883, guid: d7b4dda7ed0c80f9cbee0cd80ec67553, type: 3}
   - {fileID: 8484367460468082413, guid: e57c5bb0da1cf0075959e0686c8eed4a, type: 3}
-  _diedSprite: {fileID: 1212005890738395340, guid: 482894217d0c9cfaaa016204f485df21, type: 3}
+  _diedAudio: {fileID: 3725570711409944112, guid: 203015794947df13cb7de4420cd464a4, type: 3}
 --- !u!114 &791926768369165011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +290,102 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &1657571994702670628
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939422297084611294}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 589cfe7fc5ebeb5fc8532b00a0a77860, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 173
+  DopplerLevel: 1
+  MinDistance: 8.365937
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6298021986293570154
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1576056629909833359}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: attackpos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +428,7 @@ GameObject:
   - component: {fileID: 5900786635304581675}
   - component: {fileID: 3444263781829755696}
   - component: {fileID: 8352462303404914306}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
